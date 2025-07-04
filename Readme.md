@@ -1,8 +1,11 @@
-# nand2tetris-FPGA (v2.0)
+# nand2tetris-physical
 
-> ... _Would'nt it be nice to make Hack or Jack also run on some "real platform," made from some "real stuff"?_ ... 
+This is my fork and reimplementation of [nand2tetris-FPGA](https://gitlab.com/x653/nand2tetris-fpga), to which I tip my hat!
+Contrary to the original implementation, I will not use apio.
+
+> ... _Wouldn't it be nice to make Hack or Jack also run on some "real platform," made from some "real stuff"?_ ... 
 > 
-> ---Noam Nisan and Shimon Schocken
+> --Noam Nisan and Shimon Schocken
 
 This project is about building HACK on real hardware as proposed in Chapter 13 of the course [nand2tetris](https://www.nand2tetris.org/) using only FOSS, free and open source hard- and software.
 
@@ -36,17 +39,13 @@ Our final implementation of HACK will have the following specs:
 
 In every project folder you find a file `Readme.md` containing specifications and implementation details.
 
-> _... This is your last chance. After this, there is no turning back. You take the blue pill — the story ends, you wake up in your bed and believe whatever you want to believe. You take the red pill — you stay in Wonderland and I show you how deep the rabbit-hole goes. ..._
-> 
-> ---Morpheus
-
 ### [00 Requirement](00_Requirement)
 
 Get the hardware and install the tools.
 
 ### [01 Boolean Logic](01_Boolean_Logic)
 
-Start with a simple `Nand` gate and build the logic chips: `Not`, `Buffer`, `And`, `Or`, `Xor`, `Mux`, `DMux`, and theire multibit versions `Not16`, `Buffer16`, `And16`, `Or16`, `Mux16`, `Or8Way`, `Mux4Way16`, `Mux8Way16`, `DMux4Way` and `DMux8Way`.
+Start with a simple `Nand` gate and build the logic chips: `Not`, `Buffer`, `And`, `Or`, `Xor`, `Mux`, `DMux`, and their multibit versions `Not16`, `Buffer16`, `And16`, `Or16`, `Mux16`, `Or8Way`, `Mux4Way16`, `Mux8Way16`, `DMux4Way` and `DMux8Way`.
 
 ### [02 Boolean Arithmetic](02_Boolean_Arithmetic)
 
@@ -54,7 +53,7 @@ Proceed and build `HalfAdder`, `FullAdder`, `Add16`, `Inc16` and the `ALU`.
 
 ### [03 Sequential Logic](03_Sequential_Logic)
 
-Build sequential chips `Bit` , `Register` and `PC`, that make use of the data flip flop (DFF) to store the state. `DFF` is considered primitive, so it's not necessary to implement it. The memory chips `RAM512` and `RAM3840` are based on the primitive `RAM256`, which uses block ram structures integrated in iCE40HX1K. `BitShift9R` and `BitShift8L` are new chips not explained in the original nand2tetris course. They serve to connect HACK to different IO-Devices, which are connected using a serial protocol, where data is transmitted bitwise.
+Build sequential chips `Bit`, `Register` and `PC`, that make use of the data flip flop (DFF) to store the state. `DFF` is considered primitive, so it's not necessary to implement. The memory chips `RAM512` and `RAM3840` are based on the primitive `RAM256`, which uses block ram structures integrated in iCE40HX1K. `BitShift9R` and `BitShift8L` are new chips not explained in the original nand2tetris course. They serve to connect HACK to different IO-Devices, which are connected using a serial protocol, where data is transmitted bitwise.
 
 ### [04 Machine Language](04_Machine_Language)
 
@@ -87,6 +86,8 @@ We provide construction files to print a little case for your HACK computer with
 
 ## Credits
 
+* Michael Schroeder: [gitlab](https://gitlab.com/x653)
+
 * Noam Nisan and Shimon Schocken, "The Elements of Computing Systems", MIT Press
 
 * Noam Nisan and Shimon Schocken: Visit [nand2tetris](https://nand2tetris.org) and learn to build a modern general-purpose computer system from ground up.
@@ -102,6 +103,3 @@ We provide construction files to print a little case for your HACK computer with
 * Icons made by <a href="https://www.flaticon.com/free-icon/cpu_483131?term=cpu&page=3&position=86" title="Those Icons">Those Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 
 ---
-
-For questions or comments write an email to 
-mi.schroeder@netcologne.de
