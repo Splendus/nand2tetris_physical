@@ -1,0 +1,117 @@
+#! /Users/dominikgeng/dev/cocoa/oss-cad-suite/bin/vvp
+:ivl_version "13.0 (devel)" "(s20250103-41-g46a5078a6)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/Users/dominikgeng/dev/cocoa/oss-cad-suite/lib/ivl/system.vpi";
+:vpi_module "/Users/dominikgeng/dev/cocoa/oss-cad-suite/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/Users/dominikgeng/dev/cocoa/oss-cad-suite/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/Users/dominikgeng/dev/cocoa/oss-cad-suite/lib/ivl/v2005_math.vpi";
+:vpi_module "/Users/dominikgeng/dev/cocoa/oss-cad-suite/lib/ivl/va_math.vpi";
+:vpi_module "/Users/dominikgeng/dev/cocoa/oss-cad-suite/lib/ivl/v2009.vpi";
+S_0x7f88ca707c10 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x7f88ca707670 .scope module, "Nand_tb" "Nand_tb" 3 2;
+ .timescale 0 0;
+L_0x600000bf8930 .functor AND 1, v0x6000012f85a0_0, v0x6000012f8630_0, C4<1>, C4<1>;
+L_0x600000bf89a0 .functor NOT 1, L_0x600000bf8930, C4<0>, C4<0>, C4<0>;
+v0x6000012f8510_0 .net *"_ivl_0", 0 0, L_0x600000bf8930;  1 drivers
+v0x6000012f85a0_0 .var "a", 0 0;
+v0x6000012f8630_0 .var "b", 0 0;
+v0x6000012f86c0_0 .var "fail", 0 0;
+v0x6000012f8750_0 .net "out", 0 0, L_0x600000bf88c0;  1 drivers
+v0x6000012f87e0_0 .net "out_cmp", 0 0, L_0x600000bf89a0;  1 drivers
+S_0x7f88ca705590 .scope module, "NAND" "Nand" 3 9, 4 8 0, S_0x7f88ca707670;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x600000bf88c0 .functor NAND 1, v0x6000012f85a0_0, v0x6000012f8630_0, C4<1>, C4<1>;
+v0x6000012f8360_0 .net "a", 0 0, v0x6000012f85a0_0;  1 drivers
+v0x6000012f83f0_0 .net "b", 0 0, v0x6000012f8630_0;  1 drivers
+v0x6000012f8480_0 .net "out", 0 0, L_0x600000bf88c0;  alias, 1 drivers
+S_0x7f88ca705700 .scope task, "check" "check" 3 20, 3 20 0, S_0x7f88ca707670;
+ .timescale 0 0;
+TD_Nand_tb.check ;
+    %delay 1, 0;
+    %load/vec4 v0x6000012f8750_0;
+    %load/vec4 v0x6000012f87e0_0;
+    %cmp/ne;
+    %jmp/0xz  T_0.0, 4;
+    %vpi_call/w 3 24 "$display", "FAIL: a=%1b, b=%1b, out=%1b", v0x6000012f85a0_0, v0x6000012f8630_0, v0x6000012f8750_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6000012f86c0_0, 0, 1;
+T_0.0 ;
+    %end;
+S_0x7f88ca708590 .scope module, "top" "top" 5 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "BUT1";
+    .port_info 1 /INPUT 1 "BUT2";
+    .port_info 2 /OUTPUT 1 "LED1";
+o0x7f88cb0321b8 .functor BUFZ 1, c4<z>; HiZ drive
+v0x6000012f8a20_0 .net "BUT1", 0 0, o0x7f88cb0321b8;  0 drivers
+o0x7f88cb0321e8 .functor BUFZ 1, c4<z>; HiZ drive
+v0x6000012f8ab0_0 .net "BUT2", 0 0, o0x7f88cb0321e8;  0 drivers
+v0x6000012f8b40_0 .net "LED1", 0 0, L_0x600000bf8a10;  1 drivers
+S_0x7f88ca704900 .scope module, "NAND" "Nand" 5 8, 4 8 0, S_0x7f88ca708590;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "out";
+L_0x600000bf8a10 .functor NAND 1, o0x7f88cb0321b8, o0x7f88cb0321e8, C4<1>, C4<1>;
+v0x6000012f8870_0 .net "a", 0 0, o0x7f88cb0321b8;  alias, 0 drivers
+v0x6000012f8900_0 .net "b", 0 0, o0x7f88cb0321e8;  alias, 0 drivers
+v0x6000012f8990_0 .net "out", 0 0, L_0x600000bf8a10;  alias, 1 drivers
+    .scope S_0x7f88ca707670;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6000012f86c0_0, 0, 1;
+    %end;
+    .thread T_1, $init;
+    .scope S_0x7f88ca707670;
+T_2 ;
+    %vpi_call/w 3 31 "$dumpfile", "build/Nand_tb.vcd" {0 0 0};
+    %vpi_call/w 3 32 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7f88ca707670 {0 0 0};
+    %vpi_call/w 3 34 "$display", "---------------------" {0 0 0};
+    %vpi_call/w 3 35 "$display", "Testbench: Nand" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6000012f85a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6000012f8630_0, 0, 1;
+    %fork TD_Nand_tb.check, S_0x7f88ca705700;
+    %join;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6000012f85a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6000012f8630_0, 0, 1;
+    %fork TD_Nand_tb.check, S_0x7f88ca705700;
+    %join;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6000012f85a0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x6000012f8630_0, 0, 1;
+    %fork TD_Nand_tb.check, S_0x7f88ca705700;
+    %join;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6000012f85a0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x6000012f8630_0, 0, 1;
+    %fork TD_Nand_tb.check, S_0x7f88ca705700;
+    %join;
+    %load/vec4 v0x6000012f86c0_0;
+    %pad/u 32;
+    %cmpi/e 0, 0, 32;
+    %jmp/0xz  T_2.0, 4;
+    %vpi_call/w 3 42 "$display", "passed" {0 0 0};
+T_2.0 ;
+    %vpi_call/w 3 43 "$display", "---------------------" {0 0 0};
+    %vpi_call/w 3 44 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 6;
+    "N/A";
+    "<interactive>";
+    "-";
+    "Nand_tb.v";
+    "./../Nand.v";
+    "top.v";
