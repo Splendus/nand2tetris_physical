@@ -1,1 +1,2 @@
-`include "../../01_Boolean_Logic/Nand.v"
+`include "../../project_01/Nand.v"
+

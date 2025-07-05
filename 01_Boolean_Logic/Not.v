@@ -8,7 +8,7 @@ module Not(
 	input in,
 	output out
 );
-
-	// Put your code here:
+    
+    Nand(out,in,in); 
 
 endmodule
