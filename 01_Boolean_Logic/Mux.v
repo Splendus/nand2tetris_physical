@@ -12,6 +12,14 @@ module Mux(
 	output out
 );
 
-	// Put your code here:
+	wire notSel;
+    wire aAndNotSel;
+    wire bAndSel;
+
+    Not NOT0(.out(notSel),.in(sel));
+    And AND0(.out(aAndNotSel),.a(a),.b(notSel));
+    And AND1(.out(bAndSel),.a(sel),.b(b));
+    Or OR0(.out(out),.a(aAndNotSel),.b(bAndSel));
 
 endmodule
+
