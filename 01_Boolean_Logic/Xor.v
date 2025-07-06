@@ -10,6 +10,12 @@ module Xor(
 	output out
 );
 
-	// Put your code here:
+    wire orOut;
+    wire nandOut;
+
+    Or OR0(.out(orOut),.a(a),.b(b));
+    Nand NAND0(.out(nandOut),.a(a),.b(b));
+    And AND0(.out(out),.a(orOut),.b(nandOut));
 
 endmodule
+
