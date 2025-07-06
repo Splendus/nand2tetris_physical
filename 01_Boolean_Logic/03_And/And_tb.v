@@ -28,7 +28,7 @@ module And_tb();
 	  
   	// Test
 	initial begin
-  		$dumpfile("And_tb.vcd");
+  		$dumpfile("build/And_tb.vcd");
   		$dumpvars(0, And_tb);
 		
 		$display("------------------------");
