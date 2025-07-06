@@ -11,6 +11,12 @@ module Or(
 	output out
 );
 
-	// Put your code here:
+    wire na;  // not a
+    wire nb;  // not b
+    
+    Not NOTA(.out(na),.in(a));
+    Not NOTB(.out(nb),.in(b));
+    Nand NANDAB(.out(out),.a(na),.b(nb));
 
 endmodule
+
