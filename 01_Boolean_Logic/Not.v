@@ -8,7 +8,8 @@ module Not(
 	input in,
 	output out
 );
-    
-    Nand(out,in,in); 
+
+        Nand NAND0(.a(in),.b(in),.out(out));
 
 endmodule
+

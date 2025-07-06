@@ -11,13 +11,14 @@
 1. Executing Verilog-2005 frontend: Include.v
 Parsing Verilog input from `Include.v' to AST representation.
 Storing AST representation for module `$abstract\Nand'.
+Storing AST representation for module `$abstract\Not'.
 Successfully finished Verilog frontend.
 
--- Parsing `Nand_tb.v' using frontend ` -vlog2k' --
+-- Parsing `Not_tb.v' using frontend ` -vlog2k' --
 
-2. Executing Verilog-2005 frontend: Nand_tb.v
-Parsing Verilog input from `Nand_tb.v' to AST representation.
-Storing AST representation for module `$abstract\Nand_tb'.
+2. Executing Verilog-2005 frontend: Not_tb.v
+Parsing Verilog input from `Not_tb.v' to AST representation.
+Storing AST representation for module `$abstract\Not_tb'.
 Successfully finished Verilog frontend.
 
 -- Parsing `top.v' using frontend ` -vlog2k' --
@@ -93,20 +94,30 @@ Generating RTLIL representation for module `\top'.
 4.3.1. Analyzing design hierarchy..
 Top module:  \top
 
-4.3.2. Executing AST frontend in derive mode using pre-parsed AST for module `\Nand'.
-Generating RTLIL representation for module `\Nand'.
+4.3.2. Executing AST frontend in derive mode using pre-parsed AST for module `\Not'.
+Generating RTLIL representation for module `\Not'.
 
 4.3.3. Analyzing design hierarchy..
 Top module:  \top
-Used module:     \Nand
+Used module:     \Not
 
-4.3.4. Analyzing design hierarchy..
+4.3.4. Executing AST frontend in derive mode using pre-parsed AST for module `\Nand'.
+Generating RTLIL representation for module `\Nand'.
+
+4.3.5. Analyzing design hierarchy..
 Top module:  \top
-Used module:     \Nand
+Used module:     \Not
+Used module:         \Nand
+
+4.3.6. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \Not
+Used module:         \Nand
 Removing unused module `$abstract\top'.
-Removing unused module `$abstract\Nand_tb'.
+Removing unused module `$abstract\Not_tb'.
+Removing unused module `$abstract\Not'.
 Removing unused module `$abstract\Nand'.
-Removed 3 unused modules.
+Removed 4 unused modules.
 
 4.4. Executing PROC pass (convert processes to netlists).
 
@@ -140,11 +151,13 @@ Cleaned up 0 empty switches.
 
 4.4.12. Executing OPT_EXPR pass (perform const folding).
 Optimizing module Nand.
+Optimizing module Not.
 Optimizing module top.
 
 4.5. Executing FLATTEN pass (flatten design).
 Deleting now unused module Nand.
-<suppressed ~1 debug messages>
+Deleting now unused module Not.
+<suppressed ~3 debug messages>
 
 4.6. Executing TRIBUF pass.
 
@@ -152,10 +165,11 @@ Deleting now unused module Nand.
 
 4.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module top.
+<suppressed ~2 debug messages>
 
 4.9. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \top..
-Removed 0 unused cells and 1 unused wires.
+Removed 0 unused cells and 4 unused wires.
 <suppressed ~1 debug messages>
 
 4.10. Executing CHECK pass (checking for obvious problems).
@@ -450,7 +464,6 @@ Successfully finished Verilog frontend.
 
 4.32.3. Continuing TECHMAP pass.
 Using extmapper simplemap for cells of type $not.
-Using extmapper simplemap for cells of type $and.
 No more expansions possible.
 <suppressed ~77 debug messages>
 
@@ -656,11 +669,10 @@ Successfully finished Verilog frontend.
 <suppressed ~2 debug messages>
 
 4.42.12. Executing AIGMAP pass (map logic to AIG).
-Module top: replaced 0 cells with 0 new cells, skipped 3 cells.
-  not replaced 3 cell types:
-       1 $scopeinfo
-       1 $_NOT_
-       1 $_AND_
+Module top: replaced 0 cells with 0 new cells, skipped 6 cells.
+  not replaced 2 cell types:
+       4 $scopeinfo
+       2 $_NOT_
 
 4.42.12.1. Executing ABC9_OPS pass (helper functions for ABC9).
 
@@ -668,7 +680,7 @@ Module top: replaced 0 cells with 0 new cells, skipped 3 cells.
 
 4.42.12.3. Executing XAIGER backend.
 <suppressed ~5 debug messages>
-Extracted 1 AND gates and 7 wires from module `top' to a netlist network with 2 inputs and 1 outputs.
+Extracted 0 AND gates and 8 wires from module `top' to a netlist network with 2 inputs and 2 outputs.
 
 4.42.12.4. Executing ABC9_EXE pass (technology mapping using ABC9).
 
@@ -680,44 +692,44 @@ ABC: + read_lut <abc-temp-dir>/input.lut
 ABC: + read_box <abc-temp-dir>/input.box 
 ABC: + &read <abc-temp-dir>/input.xaig 
 ABC: + &ps 
-ABC: <abc-temp-dir>/input : i/o =      2/      1  and =       1  lev =    1 (1.00)  mem = 0.00 MB  box = 0  bb = 0
+ABC: <abc-temp-dir>/input : i/o =      2/      2  and =       0  lev =    0 (0.00)  mem = 0.00 MB  box = 0  bb = 0
 ABC: + &scorr 
 ABC: Warning: The network is combinational.
 ABC: + &sweep 
 ABC: + &dc2 
 ABC: + &dch -f 
 ABC: + &ps 
-ABC: <abc-temp-dir>/input : i/o =      2/      1  and =       1  lev =    1 (1.00)  mem = 0.00 MB  ch =    0  box = 0  bb = 0
-ABC: cst =       0  cls =      0  lit =       0  unused =       3  proof =     0
+ABC: <abc-temp-dir>/input : i/o =      2/      2  and =       0  lev =    0 (0.00)  mem = 0.00 MB  ch =    0  box = 0  bb = 0
+ABC: cst =       0  cls =      0  lit =       0  unused =       2  proof =     0
 ABC: + &if -W 750 -v 
 ABC: K = 4. Memory (bytes): Truth =    0. Cut =   52. Obj =  136. Set =  564. CutMin = no
-ABC: Node =       1.  Ch =     0.  Total mem =    0.00 MB. Peak cut mem =    0.00 MB.
-ABC: P:  Del = 1955.00.  Ar =       1.0.  Edge =        2.  Cut =        1.  T =     0.00 sec
-ABC: P:  Del = 1955.00.  Ar =       1.0.  Edge =        2.  Cut =        1.  T =     0.00 sec
-ABC: P:  Del = 1955.00.  Ar =       1.0.  Edge =        2.  Cut =        1.  T =     0.00 sec
-ABC: F:  Del = 1955.00.  Ar =       1.0.  Edge =        2.  Cut =        1.  T =     0.00 sec
-ABC: A:  Del = 1955.00.  Ar =       1.0.  Edge =        2.  Cut =        1.  T =     0.00 sec
-ABC: A:  Del = 1955.00.  Ar =       1.0.  Edge =        2.  Cut =        1.  T =     0.00 sec
+ABC: Node =       0.  Ch =     0.  Total mem =    0.00 MB. Peak cut mem =    0.00 MB.
+ABC: P:  Del =    0.00.  Ar =       0.0.  Edge =        0.  Cut =        0.  T =     0.00 sec
+ABC: P:  Del =    0.00.  Ar =       0.0.  Edge =        0.  Cut =        0.  T =     0.00 sec
+ABC: P:  Del =    0.00.  Ar =       0.0.  Edge =        0.  Cut =        0.  T =     0.00 sec
+ABC: F:  Del =    0.00.  Ar =       0.0.  Edge =        0.  Cut =        0.  T =     0.00 sec
+ABC: A:  Del =    0.00.  Ar =       0.0.  Edge =        0.  Cut =        0.  T =     0.00 sec
+ABC: A:  Del =    0.00.  Ar =       0.0.  Edge =        0.  Cut =        0.  T =     0.00 sec
 ABC: Total time =     0.00 sec
 ABC: + &write -n <abc-temp-dir>/output.aig 
 ABC: + &mfs 
 ABC: The network is not changed by "&mfs".
 ABC: + &ps -l 
-ABC: <abc-temp-dir>/input : i/o =      2/      1  and =       1  lev =    1 (1.00)  mem = 0.00 MB  box = 0  bb = 0
-ABC: Mapping (K=2)  :  lut =      1  edge =       2  lev =    1 (1.00)  mem = 0.00 MB
-ABC: LUT = 1 : 2=1 100.0 %  Ave = 2.00
+ABC: <abc-temp-dir>/input : i/o =      2/      2  and =       0  lev =    0 (0.00)  mem = 0.00 MB  box = 0  bb = 0
+ABC: Mapping (K=0)  :  lut =      0  edge =       0  lev =    0 (0.00)  mem = 0.00 MB
+ABC: LUT = 0 : Ave = 0.00
 ABC: + &write -n <abc-temp-dir>/output.aig 
 ABC: + time 
-ABC: elapse: 0.04 seconds, total: 0.04 seconds
+ABC: elapse: 0.03 seconds, total: 0.03 seconds
 
 4.42.12.6. Executing AIGER frontend.
-<suppressed ~14 debug messages>
-Removed 0 unused cells and 3 unused wires.
+<suppressed ~16 debug messages>
+Removed 0 unused cells and 4 unused wires.
 
 4.42.12.7. Executing ABC9_OPS pass (helper functions for ABC9).
-ABC RESULTS:              $lut cells:        1
+ABC RESULTS:              $lut cells:        2
 ABC RESULTS:           input signals:        2
-ABC RESULTS:          output signals:        1
+ABC RESULTS:          output signals:        2
 Removing temp directory.
 
 4.42.13. Executing TECHMAP pass (map to technology primitives).
@@ -763,30 +775,30 @@ Successfully finished Verilog frontend.
 4.44.2. Continuing TECHMAP pass.
 No more expansions possible.
 <suppressed ~22 debug messages>
-Removed 1 unused cells and 5 unused wires.
+Removed 0 unused cells and 4 unused wires.
 
 4.45. Executing OPT_LUT pass (optimize LUTs).
 Discovering LUTs.
-Number of LUTs:        1
-  2-LUT                1
+Number of LUTs:        2
+  1-LUT                2
   with \SB_CARRY    (#0)    0
   with \SB_CARRY    (#1)    0
 
 Eliminating LUTs.
-Number of LUTs:        1
-  2-LUT                1
+Number of LUTs:        2
+  1-LUT                2
   with \SB_CARRY    (#0)    0
   with \SB_CARRY    (#1)    0
 
 Combining LUTs.
-Number of LUTs:        1
-  2-LUT                1
+Number of LUTs:        2
+  1-LUT                2
   with \SB_CARRY    (#0)    0
   with \SB_CARRY    (#1)    0
 
 Eliminated 0 LUTs.
 Combined 0 LUTs.
-<suppressed ~2 debug messages>
+<suppressed ~4 debug messages>
 
 4.46. Executing TECHMAP pass (map to technology primitives).
 
@@ -796,14 +808,14 @@ Generating RTLIL representation for module `\$lut'.
 Successfully finished Verilog frontend.
 
 4.46.2. Continuing TECHMAP pass.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
 No more expansions possible.
-<suppressed ~17 debug messages>
-Removed 0 unused cells and 2 unused wires.
+<suppressed ~18 debug messages>
+Removed 0 unused cells and 4 unused wires.
 
 4.47. Executing AUTONAME pass.
-Renamed 1 objects in module top (2 iterations).
-<suppressed ~1 debug messages>
+Renamed 2 objects in module top (2 iterations).
+<suppressed ~2 debug messages>
 
 4.48. Executing HIERARCHY pass (managing design hierarchy).
 Attribute `top' found on module `top'. Setting top module to top.
@@ -819,18 +831,18 @@ Removed 0 unused modules.
 
 === top ===
 
-   Number of wires:                  6
-   Number of wire bits:              6
-   Number of public wires:           6
-   Number of public wire bits:       6
-   Number of ports:                  3
-   Number of port bits:              3
+   Number of wires:                 14
+   Number of wire bits:             14
+   Number of public wires:          14
+   Number of public wire bits:      14
+   Number of ports:                  4
+   Number of port bits:              4
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                  2
-     $scopeinfo                      1
-     SB_LUT4                         1
+   Number of cells:                  6
+     $scopeinfo                      4
+     SB_LUT4                         2
 
 4.50. Executing CHECK pass (checking for obvious problems).
 Checking module top...
@@ -838,6 +850,6 @@ Found and reported 0 problems.
 
 4.51. Executing JSON backend.
 
-End of script. Logfile hash: 8c349a5830, CPU: user 0.76s system 0.08s, MEM: 23.28 MB peak
+End of script. Logfile hash: ebc509a178, CPU: user 0.77s system 0.08s, MEM: 22.99 MB peak
 Yosys 0.54+23 (git sha1 513f0f16d, x86_64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
-Time spent: 69% 24x read_verilog (0 sec), 11% 1x abc9_exe (0 sec), ...
+Time spent: 68% 24x read_verilog (0 sec), 11% 1x abc9_exe (0 sec), ...
