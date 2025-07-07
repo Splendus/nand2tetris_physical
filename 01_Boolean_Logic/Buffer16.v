@@ -8,7 +8,8 @@ module Buffer16(
 	input [15:0] in,
 	output [15:0] out
 );
-
-	// Put your code here:
+    
+    assign out = in;  // works under the hood bit wise
 
 endmodule
+
