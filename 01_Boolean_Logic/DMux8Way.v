@@ -20,6 +20,11 @@ module DMux8Way(
 	output h
 );
 
-	// Put your code here:
+    wire abcd, efgh;  // split into two intermediate wires
+
+    DMux DMUX0(.a(abcd),.b(efgh),.in(in),.sel(sel[2]));
+
+    DMux4Way DMUX4W0(.a(a),.b(b),.c(c),.d(d),.in(abcd),.sel(sel[1:0]));
+    DMux4Way DMUX4W1(.a(e),.b(f),.c(g),.d(h),.in(efgh),.sel(sel[1:0]));
 
 endmodule
