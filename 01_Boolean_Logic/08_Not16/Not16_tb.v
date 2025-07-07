@@ -28,7 +28,7 @@ module Not16_tb();
 	
 	// Test 
   	initial begin
-  		$dumpfile("Not16_tb.vcd");
+  		$dumpfile("build/Not16_tb.vcd");
   		$dumpvars(0, Not16_tb);
 		
 		$display("------------------------");
