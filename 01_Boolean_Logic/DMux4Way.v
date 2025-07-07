@@ -15,7 +15,13 @@ module DMux4Way(
 	output c,
 	output d
 );
-	
-	// Put your code here:	
+
+    wire ab, cd;  // split into intermediate wires
+
+    DMux DMUXABCD(.a(ab),.b(cd),.in(in),.sel(sel[1]));  // sel[1] chooses between ab and cd
+
+    DMux DMUXAB(.a(a),.b(b),.in(ab),.sel(sel[0]));  // sel[0] chooses between a and b
+    DMux DMUXCD(.a(c),.b(d),.in(cd),.sel(sel[0]));  // sel[0] chooses between c and d
 
 endmodule
+

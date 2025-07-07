@@ -29,7 +29,7 @@ module Or16_tb();
 	 
 	// Test
   	initial begin
-  		$dumpfile("Or16_tb.vcd");
+  		$dumpfile("build/Or16_tb.vcd");
   		$dumpvars(0, Or16_tb);
 		
 		$display("------------------------");

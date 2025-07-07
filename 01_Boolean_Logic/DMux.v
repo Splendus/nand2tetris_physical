@@ -12,6 +12,12 @@ module DMux(
 	output b
 );
 
-	// Put your code here:
+    wire notSel;
 
+    Not NOT0(.out(notSel),.in(sel));
+
+    And ANDA(.out(a),.a(in),.b(notSel));
+    And ANDB(.out(b),.a(in),.b(sel));
+    
 endmodule
+

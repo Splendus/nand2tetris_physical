@@ -27,7 +27,7 @@ module Not_tb();
 	
 	// Test 
   	initial begin
-  		$dumpfile("Not_tb.vcd");
+  		$dumpfile("build/Not_tb.vcd");
   		$dumpvars(0, Not_tb);
 		
 		$display("------------------------");

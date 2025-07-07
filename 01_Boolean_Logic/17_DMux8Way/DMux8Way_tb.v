@@ -43,7 +43,7 @@ module DMux8Way_tb();
 
 	// Test 
   	initial begin
-  		$dumpfile("DMux8Way_tb.vcd");
+  		$dumpfile("build/DMux8Way_tb.vcd");
   		$dumpvars(0, DMux8Way_tb);
 		
 		$display("------------------------");

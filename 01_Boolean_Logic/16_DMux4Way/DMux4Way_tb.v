@@ -34,7 +34,7 @@ module DMux4Way_tb();
 	endtask
 	  
   	initial begin
-  		$dumpfile("DMux4Way_tb.vcd");
+  		$dumpfile("build/DMux4Way_tb.vcd");
   		$dumpvars(0, DMux4Way_tb);
 		
 		$display("------------------------");

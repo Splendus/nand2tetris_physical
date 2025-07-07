@@ -9,6 +9,7 @@ module Not(
 	output out
 );
 
-	// Put your code here:
+        Nand NAND0(.a(in),.b(in),.out(out));
 
 endmodule
+

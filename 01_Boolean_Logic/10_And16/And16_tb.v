@@ -29,7 +29,7 @@ module And16_tb();
 	  
 	// Test
   	initial begin
-  		$dumpfile("And16_tb.vcd");
+  		$dumpfile("build/And16_tb.vcd");
   		$dumpvars(0, And16_tb);
 		
 		$display("------------------------");

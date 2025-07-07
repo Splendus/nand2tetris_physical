@@ -29,7 +29,7 @@ module Mux_tb();
 	 
 	// Test 
   	initial begin
-  		$dumpfile("Mux_tb.vcd");
+  		$dumpfile("build/Mux_tb.vcd");
   		$dumpvars(0, Mux_tb);
 		
 		$display("------------------------");

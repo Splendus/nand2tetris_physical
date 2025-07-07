@@ -28,7 +28,7 @@ module Buffer16_tb();
 	  
   	// Test	
 	initial begin
-  		$dumpfile("Buffer16_tb.vcd");
+  		$dumpfile("build/Buffer16_tb.vcd");
   		$dumpvars(0, Buffer16_tb);
 		
 		$display("------------------------");

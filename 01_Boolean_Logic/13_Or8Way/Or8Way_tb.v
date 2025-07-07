@@ -28,7 +28,7 @@ module Or8Way_tb();
 	
 	// Test 
   	initial begin
-  		$dumpfile("Or8Way_tb.vcd");
+  		$dumpfile("build/Or8Way_tb.vcd");
   		$dumpvars(0, Or8Way_tb);
 		
 		$display("------------------------");

@@ -28,7 +28,7 @@ module Or_tb();
 	  
   	// Test
 	initial begin
-  		$dumpfile("Or_tb.vcd");
+  		$dumpfile("build/Or_tb.vcd");
   		$dumpvars(0, Or_tb);
 		
 		$display("------------------------");
