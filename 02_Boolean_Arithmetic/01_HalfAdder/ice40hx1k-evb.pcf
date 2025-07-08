@@ -1,0 +1,8 @@
+# physical constraint file
+
+set_io BUT1 41
+set_io BUT2 42
+
+set_io LED1 40
+set_io LED2 51
+
