@@ -6,6 +6,6 @@ module top(
 	output LED2
 );
 
-	HalfAdder HA(.a(BUT1),.b(BUT2),.sum(LED1),.carry(LED2));
+	HalfAdder HA(.a(BUT1),.b(BUT2),.sum(LED1),.cout(LED2));
 	
 endmodule

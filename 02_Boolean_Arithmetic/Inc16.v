@@ -9,6 +9,11 @@ module Inc16(
 	output [15:0] out
 );
 
-	// Put your code here:
+    // `assign out = in + 1;` would probably do the same
+    wire [15:0] one;
+    assign one[0] = 1;
+
+    Add16 ADD(.out(out),.a(in),.b(one));
 
 endmodule
+

@@ -3,14 +3,14 @@ module HalfAdder_tb();
 
 	// IN,OUT
 	reg a,b;
-	wire sum,carry;
+	wire sum,cout;
 
 	// Part
 	HalfAdder HALFADDER(
 		.a(a),
 		.b(b),
 		.sum(sum),
-		.carry(carry)
+		.cout(cout)
 	);
 
 	// Compare
@@ -20,15 +20,15 @@ module HalfAdder_tb();
 	reg fail = 0;
 	task check;
 		#1
-		if ({carry,sum} != out_cmp) 
+		if ({cout,sum} != out_cmp) 
 			begin
-				$display("FAIL: a=%1b, b=%1b, sum=%1b, carry=%1b",a,b,sum,carry);
+				$display("FAIL: a=%1b, b=%1b, sum=%1b, cout=%1b",a,b,sum,cout);
 				fail=1;
 			end
 	endtask
 	  
   	initial begin
-  		$dumpfile("HalfAdder_tb.vcd");
+  		$dumpfile("build/HalfAdder_tb.vcd");
   		$dumpvars(0, HalfAdder_tb);
 		
 		$display("------------------------");
