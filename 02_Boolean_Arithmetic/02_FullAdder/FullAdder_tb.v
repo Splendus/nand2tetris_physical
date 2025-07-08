@@ -29,7 +29,7 @@ module FullAdder_tb();
 	endtask
 	  
   	initial begin
-  		$dumpfile("FullAdder_tb.vcd");
+  		$dumpfile("build/FullAdder_tb.vcd");
   		$dumpvars(0, FullAdder_tb);
 		
 		$display("------------------------");
