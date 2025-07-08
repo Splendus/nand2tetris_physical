@@ -28,7 +28,7 @@ module Inc16_tb();
 	  
 	// Test
   	initial begin
-  		$dumpfile("Inc16_tb.vcd");
+  		$dumpfile("build/Inc16_tb.vcd");
   		$dumpvars(0, Inc16_tb);
 		
 		$display("------------------------");
