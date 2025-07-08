@@ -7,18 +7,18 @@
 module FullAdder(
 	input a,		// 1-bit input
 	input b,		// 1-bit input
-	input c,		// 1-bit carry-in input
-	output sum,		// Right bit of a + b + c
-	output carry	// Left bit of a + b + c
+	input cin,		// 1-bit carry-in input
+	output sum,		// Right bit of a + b + cin
+	output cout	// Left bit of a + b + cin
 );
 
     wire sumAB;
-    wire carryAB;
-    wire carry1;  // carry of HalfAdder 1
+    wire coutAB;
+    wire cout1;  // carry of HalfAdder 1
 
-    HalfAdder HA0(.sum(sumAB),.carry(carryAB),.a(a),.b(b));
-    HalfAdder HA1(.sum(sum),.carry(carry1),.a(c),.b(sumAB));
-    Or ORSUM(.out(carry),.a(carryAB),.b(carry1));
+    HalfAdder HA0(.sum(sumAB),.cout(coutAB),.a(a),.b(b));
+    HalfAdder HA1(.sum(sum),.cout(cout1),.a(cin),.b(sumAB));
+    Or ORSUM(.out(cout),.a(coutAB),.b(cout1));
 
 endmodule
 
