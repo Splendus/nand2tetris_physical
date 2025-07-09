@@ -12,7 +12,18 @@ module RAM512(
 	input load,
 	output [15:0] out
 );
-	
-	// Put your code here:
+    
+    wire load_hi, load_lo;
+
+    wire [15:0] out_hi, out_lo;
+
+    // if load: if address[8] load_hi else load_lo
+    DMux dm_load (.in(load),.sel(address[8]),.a(load_lo),.b(load_hi));
+
+    RAM256 ram_lo (.clk(clk),.address(address[7:0]),.in(in),.load(load_lo),.out(out_lo));
+    RAM256 ram_hi (.clk(clk),.address(address[7:0]),.in(in),.load(load_hi),.out(out_hi));
+
+    Mux16 mux_out (.a(out_lo),.b(out_hi),.sel(address[8]),.out(out));
 
 endmodule
+
