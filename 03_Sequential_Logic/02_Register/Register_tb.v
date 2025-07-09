@@ -36,7 +36,7 @@ module Register_tb();
 	endtask
 	  
   	initial begin
-  		$dumpfile("Register_tb.vcd");
+  		$dumpfile("build/Register_tb.vcd");
   		$dumpvars(0, Register_tb);
 		
 		$display("------------------------");

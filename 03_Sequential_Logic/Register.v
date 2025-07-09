@@ -13,6 +13,14 @@ module Register(
 	output [15:0] out
 );
 
-	// Put your code here:
+    parameter N_BITS=16;
+
+    genvar i;
+    generate 
+        for (i=0; i < N_BITS; i = i +1) begin
+            Bit b(.clk(clk),.in(in[i]),.load(load),.out(out[i]));
+        end
+    endgenerate
 
 endmodule
+
