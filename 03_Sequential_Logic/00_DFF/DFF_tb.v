@@ -35,7 +35,7 @@ module DFF_tb();
 	
 	// Test  
   	initial begin
-  		$dumpfile("DFF_tb.vcd");
+  		$dumpfile("build/DFF_tb.vcd");
   		$dumpvars(0, DFF_tb);
 		
 		$display("------------------------");
