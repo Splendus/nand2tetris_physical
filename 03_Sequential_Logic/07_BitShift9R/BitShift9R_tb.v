@@ -17,13 +17,14 @@ module BitShift9R_tb();
 		.out(out)
 	);
 
+	reg [15:0] n = 0;
 	// Simulate
 	always #1 clk=~clk;
 	always @(posedge clk) begin
 		in <= $random;
 		shift <= (n==0) || ((n>20) && (n<50));
 		inMSB <= $random;	
-		load <= (n==10);
+		load <= (n==10) || ((n>60) && (n<80));
 	end
 	
 	// Compare
@@ -32,7 +33,6 @@ module BitShift9R_tb();
 		out_cmp <= load?in:(shift?(out_cmp>>1)|(inMSB<<8):out_cmp);	
 	
 	reg fail = 0;
-	reg [15:0] n = 0;
 	task check;
 		#1
 		if (out != out_cmp) 
@@ -44,7 +44,7 @@ module BitShift9R_tb();
 	
 	// Test  
   	initial begin
-  		$dumpfile("BitShift9R_tb.vcd");
+  		$dumpfile("build/BitShift9R_tb.vcd");
   		$dumpvars(0, BitShift9R_tb);
 		
 		$display("------------------------");
