@@ -5,7 +5,7 @@ PCF = ice40hx1k-evb.pcf
 RMDIR = rmdir
 
 SRCS = $(wildcard *.v)
-TOP = top
+TOP = blinky
 TB = $(basename $(wildcard *_tb.v))
 
 SIMOUT = $(BUILDDIR)/sim.vvp

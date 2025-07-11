@@ -15,7 +15,7 @@ module blinky_tb();
 	always #1 CLK=~CLK;
 
   	initial begin
-  		$dumpfile("blinky_tb.vcd");
+  		$dumpfile("build/blinky_tb.vcd");
   		$dumpvars(0, blinky_tb);
 		#100000
 		$finish;

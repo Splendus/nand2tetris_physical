@@ -1,0 +1,44 @@
+
+icetime topological timing analysis report
+==========================================
+
+Info: max_span_hack is enabled: estimate is conservative.
+
+Report for critical path:
+-------------------------
+
+        lc40_7_1_2 (LogicCell40) [clk] -> lcout: 0.640 ns
+     0.640 ns net_12337 (counter[0])
+        t56 (LocalMux) I -> O: 0.330 ns
+        inmux_7_1_14512_14549 (InMux) I -> O: 0.260 ns
+        lc40_7_1_5 (LogicCell40) in0 -> lcout: 0.449 ns
+     1.678 ns net_12340 (COUNTER.pc_out.genblk1[4].b.bit_register.in_SB_LUT4_O_I3[1])
+        t60 (LocalMux) I -> O: 0.330 ns
+        inmux_8_1_16600_16634 (InMux) I -> O: 0.260 ns
+        lc40_8_1_1 (LogicCell40) in0 -> lcout: 0.449 ns
+     2.716 ns net_14445 (COUNTER.pc_out.genblk1[7].b.bit_register.in_SB_LUT4_O_I3[1])
+        t65 (LocalMux) I -> O: 0.330 ns
+        inmux_8_1_16612_16655 (InMux) I -> O: 0.260 ns
+        lc40_8_1_4 (LogicCell40) in3 -> lcout: 0.316 ns
+     3.621 ns net_14448 (COUNTER.pc_out.genblk1[10].b.bit_register.in_SB_LUT4_O_I3[1])
+        t69 (LocalMux) I -> O: 0.330 ns
+        inmux_9_1_18715_18749 (InMux) I -> O: 0.260 ns
+        lc40_9_1_2 (LogicCell40) in1 -> lcout: 0.400 ns
+     4.610 ns net_16555 (COUNTER.pc_out.genblk1[13].b.bit_register.in_SB_LUT4_O_I3[1])
+        t78 (LocalMux) I -> O: 0.330 ns
+        inmux_9_1_18729_18742 (InMux) I -> O: 0.260 ns
+     5.199 ns net_18742 (COUNTER.pc_out.genblk1[13].b.bit_register.in_SB_LUT4_O_I3[1])
+        lc40_9_1_1 (LogicCell40) in0 [setup]: 0.400 ns
+     5.599 ns net_16554 (counter[13])
+
+Resolvable net names on path:
+     0.640 ns ..  1.229 ns counter[0]
+     1.678 ns ..  2.267 ns COUNTER.pc_out.genblk1[4].b.bit_register.in_SB_LUT4_O_I3[1]
+     2.716 ns ..  3.305 ns COUNTER.pc_out.genblk1[7].b.bit_register.in_SB_LUT4_O_I3[1]
+     3.621 ns ..  4.210 ns COUNTER.pc_out.genblk1[10].b.bit_register.in_SB_LUT4_O_I3[1]
+     4.610 ns ..  5.199 ns COUNTER.pc_out.genblk1[13].b.bit_register.in_SB_LUT4_O_I3[1]
+                  lcout -> counter[13]
+
+Total number of logic levels: 5
+Total path delay: 5.60 ns (178.62 MHz)
+
