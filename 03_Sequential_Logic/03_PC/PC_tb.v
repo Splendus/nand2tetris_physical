@@ -19,11 +19,15 @@ module PC_tb();
 
 	// Simulate
 	always #1 clk=~clk;
+
+    reg [15:0] n = 0;
+
 	always @(posedge clk) begin
 		in <= $random;	
 		reset <= (n==10) || (n==24) || (n==44);
 		inc <= $random;
 		load <= $random;
+        n <= n + 1;
 	end
 
 	// Compare
@@ -32,7 +36,6 @@ module PC_tb();
 		out_cmp <= (reset?0:(load?in:(inc?out+1:out)));	
 	
 	reg fail = 0;
-	reg [15:0] n = 0;
 	task check;
 		#1
 		if (out != out_cmp) 
@@ -43,14 +46,14 @@ module PC_tb();
 	endtask
 	  
   	initial begin
-  		$dumpfile("PC_tb.vcd");
+  		$dumpfile("build/PC_tb.vcd");
   		$dumpvars(0, PC_tb);
 		
 		$display("------------------------");
 		$display("Testbench: PC");
 
-		for (n=0; n<1000;n=n+1) 
-			check();
+
+		repeat(1000) check();
 		
 		if (fail==0) $display("passed");
 		$display("------------------------");

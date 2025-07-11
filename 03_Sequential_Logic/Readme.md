@@ -6,7 +6,7 @@ Build sequential chips `Bit` , `Register` and `PC`, that make use of the data fl
 
 ## blinky
 
-The folder `08_blinky` contains a project to test the counter `PC` in real hardware. Blinky uses counters `PC` to scale down the frequency of 100MHz provided by the clock oscillator on iCE40HX1K-EVB and finally drives the LED1/2.
+The directory `08_blinky` contains a project to test the counter `PC` in real hardware. Blinky uses counters `PC` to scale down the frequency of 100MHz provided by the clock oscillator on iCE40HX1K-EVB and finally drives the LED1/2.
 
 ***
 
@@ -16,20 +16,12 @@ The folder `08_blinky` contains a project to test the counter `PC` in real hardw
 
 * Implement the chips `RAM512` and `RAM3840` using `RAM256` as primitive building block.
 
-* for every chip we provide a test bench in the dedicated folder.
+* for every chip we provide a test bench in the dedicated directory.
   
   ```shell
-  $ cd <test folder>
-  $ apio clean
-  $ apio sim
-  ```
-
-* Run blinky in simulation
-  
-  ```
-  $ cd 06_blinky
-  $ apio clean
-  $ apio sim
+  $ cd <test directory>
+  $ make clean
+  $ make sim
   ```
 
 * Zoom in to check the prescaler:
@@ -40,12 +32,13 @@ The folder `08_blinky` contains a project to test the counter `PC` in real hardw
   
   ![](08_blinky/counter.png)
 
-* Upload the project to iCE40HX1K-EVB end test in real hardware:
+* Upload blinky to iCE40HX1K-EVB end test in real hardware:
   
   ```
   $ cd 06_blinky
-  $ apio clean
-  $ apio upload
+  $ make clean
+  $ make
+  $ iceprogduino build/top.bin
   ```
 
 * Look at LED1/2 and see if they blink.

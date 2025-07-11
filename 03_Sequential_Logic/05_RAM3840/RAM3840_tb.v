@@ -17,6 +17,7 @@ module RAM3840_tb();
 		.out(out)
 	);
 
+	reg [15:0] n = 0;
 	// Simulate
 	always #1 clk=~clk;
 	always @(posedge clk) begin
@@ -32,7 +33,6 @@ module RAM3840_tb();
 	wire[15:0] out_cmp = regRAM[address[11:0]];
 	
 	reg fail = 0;
-	reg [15:0] n = 0;
 	task check;
 		#1
 		if (out != out_cmp) 
@@ -43,7 +43,7 @@ module RAM3840_tb();
 	endtask
 	  
   	initial begin
-  		$dumpfile("RAM3840_tb.vcd");
+  		$dumpfile("build/RAM3840_tb.vcd");
   		$dumpvars(0, RAM3840_tb);
 		
 		$display("------------------------");

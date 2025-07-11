@@ -17,6 +17,7 @@ module BitShift8L_tb();
 		.out(out)
 	);
 
+	reg [15:0] n = 0;
 	// Simulate
 	always #1 clk=~clk;
 	always @(posedge clk) begin
@@ -32,7 +33,6 @@ module BitShift8L_tb();
 		out_cmp <= load?in:(shift?(out_cmp<<1)|inLSB:out_cmp);	
 	
 	reg fail = 0;
-	reg [15:0] n = 0;
 	task check;
 		#1
 		if (out != out_cmp) 
@@ -44,7 +44,7 @@ module BitShift8L_tb();
 	
 	// Test  
   	initial begin
-  		$dumpfile("BitShift8L_tb.vcd");
+  		$dumpfile("build/BitShift8L_tb.vcd");
   		$dumpvars(0, BitShift8L_tb);
 		
 		$display("------------------------");

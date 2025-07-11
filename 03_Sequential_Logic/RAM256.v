@@ -16,6 +16,7 @@ module RAM256(
 	// No need to implement this chip
 	// RAM is implemented using BRAM of iCE40
 	reg [15:0] regRAM [0:255]; 
+
 	always @(posedge clk)
 		if (load) regRAM[address[7:0]] <= in;
 

@@ -11,7 +11,7 @@ module Inc16(
 
     // `assign out = in + 1;` would probably do the same
     wire [15:0] one;
-    assign one[0] = 1;
+    assign one = 16'd1;
 
     Add16 ADD(.out(out),.a(in),.b(one));
 

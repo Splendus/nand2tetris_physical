@@ -12,6 +12,12 @@ module Bit(
 	output out
 );
 
-	// Put your code here:
+    wire dff_in;
+    reg dff;
+
+    Mux load_mux(.out(dff_in),.a(out),.b(in),.sel(load));
+    DFF bit_register(.out(out),.in(dff_in),.clk(clk));
+
 
 endmodule
+

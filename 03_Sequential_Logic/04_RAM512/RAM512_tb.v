@@ -17,6 +17,8 @@ module RAM512_tb();
 		.out(out)
 	);
 
+	reg [15:0] n = 0;
+
 	// Simulate
 	always #1 clk=~clk;
 	always @(posedge clk) begin
@@ -32,7 +34,6 @@ module RAM512_tb();
 	wire[15:0] out_cmp = regRAM[address[8:0]];
 	
 	reg fail = 0;
-	reg [15:0] n = 0;
 	task check;
 		#1
 		if (out != out_cmp) 
@@ -43,14 +44,13 @@ module RAM512_tb();
 	endtask
 	  
   	initial begin
-  		$dumpfile("RAM512_tb.vcd");
+  		$dumpfile("build/RAM512_tb.vcd");
   		$dumpvars(0, RAM512_tb);
 		
 		$display("------------------------");
 		$display("Testbench: RAM512");
 
-		for (n=0; n<1000;n=n+1) 
-			check();
+	    repeat(1000) check();
 		
 		if (fail==0) $display("passed");
 		$display("------------------------");
