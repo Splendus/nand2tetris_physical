@@ -330,18 +330,18 @@ Promoted 1 assignment to connection.
 Converted 0 switches.
 
 4.4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\DFF.$proc$../../03_Sequential_Logic/DFF.v:16$385'.
+Creating decoders for process `\DFF.$proc$../../03_Sequential_Logic/DFF.v:16$387'.
 
 4.4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
 
 4.4.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\DFF.\out' using process `\DFF.$proc$../../03_Sequential_Logic/DFF.v:16$385'.
-  created $dff cell `$procdff$386' with positive edge clock.
+Creating register for signal `\DFF.\out' using process `\DFF.$proc$../../03_Sequential_Logic/DFF.v:16$387'.
+  created $dff cell `$procdff$388' with positive edge clock.
 
 4.4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 4.4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `DFF.$proc$../../03_Sequential_Logic/DFF.v:16$385'.
+Removing empty process `DFF.$proc$../../03_Sequential_Logic/DFF.v:16$387'.
 Cleaned up 0 empty switches.
 
 4.4.12. Executing OPT_EXPR pass (perform const folding).
@@ -394,12 +394,12 @@ Deleting now unused module Buffer.
 
 4.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module blinky.
-<suppressed ~1308 debug messages>
+<suppressed ~1304 debug messages>
 
 4.9. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \blinky..
-Removed 255 unused cells and 1850 unused wires.
-<suppressed ~352 debug messages>
+Removed 228 unused cells and 1846 unused wires.
+<suppressed ~325 debug messages>
 
 4.10. Executing CHECK pass (checking for obvious problems).
 Checking module blinky...
@@ -412,8 +412,8 @@ Optimizing module blinky.
 
 4.11.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\blinky'.
-<suppressed ~156 debug messages>
-Removed a total of 52 cells.
+<suppressed ~174 debug messages>
+Removed a total of 58 cells.
 
 4.11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
 Running muxtree optimizer on module \blinky..
@@ -433,8 +433,8 @@ Removed a total of 0 cells.
 
 4.11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \blinky..
-Removed 0 unused cells and 1062 unused wires.
-<suppressed ~1038 debug messages>
+Removed 0 unused cells and 1016 unused wires.
+<suppressed ~989 debug messages>
 
 4.11.8. Executing OPT_EXPR pass (perform const folding).
 Optimizing module blinky.
@@ -518,14 +518,11 @@ Optimizing module blinky.
 4.13.9. Finished OPT passes. (There is nothing left to do.)
 
 4.14. Executing WREDUCE pass (reducing word size of cells).
-Removed top 3 bits (of 16) from wire blinky.prescaler.
 
 4.15. Executing PEEPOPT pass (run peephole optimizers).
 
 4.16. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \blinky..
-Removed 0 unused cells and 1 unused wires.
-<suppressed ~1 debug messages>
 
 4.17. Executing SHARE pass (SAT-based resource sharing).
 
@@ -637,7 +634,7 @@ No more expansions possible.
 
 4.28.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module blinky.
-<suppressed ~11 debug messages>
+<suppressed ~10 debug messages>
 
 4.28.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\blinky'.
@@ -647,6 +644,8 @@ Removed a total of 0 cells.
 
 4.28.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \blinky..
+Removed 2 unused cells and 22 unused wires.
+<suppressed ~23 debug messages>
 
 4.28.5. Finished fast OPT passes.
 
@@ -727,7 +726,7 @@ Using extmapper simplemap for cells of type $dff.
 Using extmapper simplemap for cells of type $and.
 Using extmapper simplemap for cells of type $not.
 No more expansions possible.
-<suppressed ~268 debug messages>
+<suppressed ~291 debug messages>
 
 4.33. Executing OPT pass (performing simple optimizations).
 
@@ -742,6 +741,8 @@ Removed a total of 0 cells.
 
 4.33.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \blinky..
+Removed 40 unused cells and 172 unused wires.
+<suppressed ~207 debug messages>
 
 4.33.5. Finished fast OPT passes.
 
@@ -751,6 +752,7 @@ Finding unused cells or wires in module \blinky..
 
 4.34.2. Executing OPT_EXPR pass (perform const folding).
 Optimizing module blinky.
+<suppressed ~47 debug messages>
 
 4.34.3. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\blinky'.
@@ -761,7 +763,23 @@ Removed a total of 0 cells.
 4.34.5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \blinky..
 
-4.34.6. Finished OPT passes. (There is nothing left to do.)
+4.34.6. Rerunning OPT passes. (Removed registers in this run.)
+
+4.34.7. Running ICE40 specific optimizations.
+
+4.34.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module blinky.
+
+4.34.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\blinky'.
+Removed a total of 0 cells.
+
+4.34.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.34.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \blinky..
+
+4.34.12. Finished OPT passes. (There is nothing left to do.)
 
 4.35. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
 
@@ -794,7 +812,7 @@ Successfully finished Verilog frontend.
 4.36.2. Continuing TECHMAP pass.
 Using template \$_DFF_P_ for cells of type $_DFF_P_.
 No more expansions possible.
-<suppressed ~51 debug messages>
+<suppressed ~49 debug messages>
 
 4.37. Executing OPT_EXPR pass (perform const folding).
 Optimizing module blinky.
@@ -816,7 +834,7 @@ Removed a total of 0 cells.
 
 4.39.5. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \blinky..
-Removed 0 unused cells and 116 unused wires.
+Removed 0 unused cells and 108 unused wires.
 <suppressed ~1 debug messages>
 
 4.39.6. Rerunning OPT passes. (Removed registers in this run.)
@@ -950,20 +968,20 @@ Successfully finished Verilog frontend.
 <suppressed ~2 debug messages>
 
 4.42.12. Executing AIGMAP pass (map logic to AIG).
-Module blinky: replaced 0 cells with 0 new cells, skipped 2178 cells.
+Module blinky: replaced 0 cells with 0 new cells, skipped 2191 cells.
   not replaced 4 cell types:
     1985 $scopeinfo
-      83 $_NOT_
-      81 $_AND_
-      29 SB_DFF
+      77 $_NOT_
+     102 $_AND_
+      27 SB_DFF
 
 4.42.12.1. Executing ABC9_OPS pass (helper functions for ABC9).
 
 4.42.12.2. Executing ABC9_OPS pass (helper functions for ABC9).
 
 4.42.12.3. Executing XAIGER backend.
-<suppressed ~34 debug messages>
-Extracted 81 AND gates and 228 wires from module `blinky' to a netlist network with 30 inputs and 32 outputs.
+<suppressed ~32 debug messages>
+Extracted 102 AND gates and 241 wires from module `blinky' to a netlist network with 30 inputs and 30 outputs.
 
 4.42.12.4. Executing ABC9_EXE pass (technology mapping using ABC9).
 
@@ -975,44 +993,44 @@ ABC: + read_lut <abc-temp-dir>/input.lut
 ABC: + read_box <abc-temp-dir>/input.box 
 ABC: + &read <abc-temp-dir>/input.xaig 
 ABC: + &ps 
-ABC: <abc-temp-dir>/input : i/o =     30/     32  and =      81  lev =   16 (7.03)  mem = 0.00 MB  box = 0  bb = 0
+ABC: <abc-temp-dir>/input : i/o =     30/     30  and =     102  lev =   17 (7.57)  mem = 0.00 MB  box = 0  bb = 0
 ABC: + &scorr 
 ABC: Warning: The network is combinational.
 ABC: + &sweep 
 ABC: + &dc2 
 ABC: + &dch -f 
 ABC: + &ps 
-ABC: <abc-temp-dir>/input : i/o =     30/     32  and =      87  lev =   16 (7.03)  mem = 0.00 MB  ch =    2  box = 0  bb = 0
-ABC: cst =       0  cls =      2  lit =       2  unused =     113  proof =     0
+ABC: <abc-temp-dir>/input : i/o =     30/     30  and =     156  lev =   17 (7.57)  mem = 0.00 MB  ch =   25  box = 0  bb = 0
+ABC: cst =       0  cls =     25  lit =      25  unused =     136  proof =     0
 ABC: + &if -W 750 -v 
 ABC: K = 4. Memory (bytes): Truth =    0. Cut =   52. Obj =  136. Set =  564. CutMin = no
-ABC: Node =      87.  Ch =     2.  Total mem =    0.02 MB. Peak cut mem =    0.01 MB.
-ABC: P:  Del = 8531.00.  Ar =      48.0.  Edge =      180.  Cut =      438.  T =     0.00 sec
-ABC: P:  Del = 8531.00.  Ar =      48.0.  Edge =      180.  Cut =      438.  T =     0.00 sec
-ABC: P:  Del = 8531.00.  Ar =      36.0.  Edge =      114.  Cut =      438.  T =     0.00 sec
-ABC: F:  Del = 8531.00.  Ar =      34.0.  Edge =      109.  Cut =      282.  T =     0.00 sec
-ABC: A:  Del = 8531.00.  Ar =      34.0.  Edge =      109.  Cut =      362.  T =     0.00 sec
-ABC: A:  Del = 8531.00.  Ar =      34.0.  Edge =      109.  Cut =      362.  T =     0.00 sec
+ABC: Node =     156.  Ch =    25.  Total mem =    0.03 MB. Peak cut mem =    0.01 MB.
+ABC: P:  Del = 10075.00.  Ar =      48.0.  Edge =      180.  Cut =      696.  T =     0.00 sec
+ABC: P:  Del = 10075.00.  Ar =      48.0.  Edge =      180.  Cut =      696.  T =     0.00 sec
+ABC: P:  Del = 10075.00.  Ar =      46.0.  Edge =      152.  Cut =      696.  T =     0.00 sec
+ABC: F:  Del = 10075.00.  Ar =      41.0.  Edge =      142.  Cut =      585.  T =     0.00 sec
+ABC: A:  Del = 10075.00.  Ar =      41.0.  Edge =      133.  Cut =      544.  T =     0.00 sec
+ABC: A:  Del = 10075.00.  Ar =      41.0.  Edge =      133.  Cut =      554.  T =     0.00 sec
 ABC: Total time =     0.00 sec
 ABC: + &write -n <abc-temp-dir>/output.aig 
 ABC: + &mfs 
 ABC: The network is not changed by "&mfs".
 ABC: + &ps -l 
-ABC: <abc-temp-dir>/input : i/o =     30/     32  and =     129  lev =   16 (7.03)  mem = 0.00 MB  box = 0  bb = 0
-ABC: Mapping (K=4)  :  lut =     34  edge =     109  lev =    5 (2.34)  mem = 0.00 MB
-ABC: LUT = 34 : 2=9 26.5 %  3=9 26.5 %  4=16 47.1 %  Ave = 3.21
+ABC: <abc-temp-dir>/input : i/o =     30/     30  and =     142  lev =   17 (7.57)  mem = 0.00 MB  box = 0  bb = 0
+ABC: Mapping (K=4)  :  lut =     41  edge =     133  lev =    6 (3.10)  mem = 0.00 MB
+ABC: LUT = 41 : 2=4 9.8 %  3=23 56.1 %  4=14 34.1 %  Ave = 3.24
 ABC: + &write -n <abc-temp-dir>/output.aig 
 ABC: + time 
 ABC: elapse: 0.04 seconds, total: 0.04 seconds
 
 4.42.12.6. Executing AIGER frontend.
-<suppressed ~132 debug messages>
-Removed 201 unused cells and 260 unused wires.
+<suppressed ~128 debug messages>
+Removed 203 unused cells and 260 unused wires.
 
 4.42.12.7. Executing ABC9_OPS pass (helper functions for ABC9).
-ABC RESULTS:              $lut cells:       36
-ABC RESULTS:           input signals:        3
-ABC RESULTS:          output signals:       31
+ABC RESULTS:              $lut cells:       41
+ABC RESULTS:           input signals:        4
+ABC RESULTS:          output signals:       29
 Removing temp directory.
 
 4.42.13. Executing TECHMAP pass (map to technology primitives).
@@ -1058,39 +1076,36 @@ Successfully finished Verilog frontend.
 4.44.2. Continuing TECHMAP pass.
 No more expansions possible.
 <suppressed ~22 debug messages>
-Removed 0 unused cells and 545 unused wires.
+Removed 0 unused cells and 632 unused wires.
 
 4.45. Executing OPT_LUT pass (optimize LUTs).
 Discovering LUTs.
-Number of LUTs:       36
-  1-LUT                2
-  2-LUT                9
-  3-LUT                9
-  4-LUT               16
+Number of LUTs:       41
+  2-LUT                4
+  3-LUT               23
+  4-LUT               14
   with \SB_CARRY    (#0)    0
   with \SB_CARRY    (#1)    0
 
 Eliminating LUTs.
-Number of LUTs:       36
-  1-LUT                2
-  2-LUT                9
-  3-LUT                9
-  4-LUT               16
+Number of LUTs:       41
+  2-LUT                4
+  3-LUT               23
+  4-LUT               14
   with \SB_CARRY    (#0)    0
   with \SB_CARRY    (#1)    0
 
 Combining LUTs.
-Number of LUTs:       36
-  1-LUT                2
-  2-LUT                9
-  3-LUT                9
-  4-LUT               16
+Number of LUTs:       41
+  2-LUT                4
+  3-LUT               23
+  4-LUT               14
   with \SB_CARRY    (#0)    0
   with \SB_CARRY    (#1)    0
 
 Eliminated 0 LUTs.
 Combined 0 LUTs.
-<suppressed ~72 debug messages>
+<suppressed ~117 debug messages>
 
 4.46. Executing TECHMAP pass (map to technology primitives).
 
@@ -1100,18 +1115,19 @@ Generating RTLIL representation for module `\$lut'.
 Successfully finished Verilog frontend.
 
 4.46.2. Continuing TECHMAP pass.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
-Using template $paramod$619b7c9a4d44585e10b42f7fb79b16304cca97c5\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
 Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01101010 for cells of type $lut.
+Using template $paramod$5ce0414f30742591cfbc3ba73903b522793ddcd1\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00101000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0010 for cells of type $lut.
 No more expansions possible.
-<suppressed ~104 debug messages>
-Removed 0 unused cells and 72 unused wires.
+<suppressed ~122 debug messages>
+Removed 0 unused cells and 82 unused wires.
 
 4.47. Executing AUTONAME pass.
-Renamed 79 objects in module blinky (3 iterations).
-<suppressed ~72 debug messages>
+Renamed 101 objects in module blinky (4 iterations).
+<suppressed ~82 debug messages>
 
 4.48. Executing HIERARCHY pass (managing design hierarchy).
 Attribute `top' found on module `blinky'. Setting top module to blinky.
@@ -1127,19 +1143,19 @@ Removed 0 unused modules.
 
 === blinky ===
 
-   Number of wires:               4970
-   Number of wire bits:           7077
-   Number of public wires:        4970
-   Number of public wire bits:    7077
-   Number of ports:                  2
-   Number of port bits:              3
+   Number of wires:               4752
+   Number of wire bits:           6481
+   Number of public wires:        4752
+   Number of public wire bits:    6481
+   Number of ports:                  3
+   Number of port bits:              5
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:               2050
+   Number of cells:               2053
      $scopeinfo                   1985
-     SB_DFF                         29
-     SB_LUT4                        36
+     SB_DFF                         27
+     SB_LUT4                        41
 
 4.50. Executing CHECK pass (checking for obvious problems).
 Checking module blinky...
@@ -1147,6 +1163,6 @@ Found and reported 0 problems.
 
 4.51. Executing JSON backend.
 
-End of script. Logfile hash: ab25259b9a, CPU: user 2.03s system 0.13s, MEM: 51.69 MB peak
+End of script. Logfile hash: dda96fb7a8, CPU: user 2.09s system 0.12s, MEM: 50.26 MB peak
 Yosys 0.54+23 (git sha1 513f0f16d, x86_64-apple-darwin23.5-clang++ 18.1.8 -fPIC -O3)
-Time spent: 27% 24x read_verilog (0 sec), 22% 18x opt_clean (0 sec), ...
+Time spent: 27% 24x read_verilog (0 sec), 23% 19x opt_clean (0 sec), ...

@@ -31,7 +31,7 @@ $(BUILDDIR)/$(TOP).rpt: $(TOP).asc
 
 $(SIMOUT): $(SRCS)
 	@mkdir -p $(dir $@)
-	iverilog -g2012 -o $@ $(SRCS)
+	iverilog -g2012 -DSIM -o $@ $(SRCS)
 
 sim: $(SIMOUT)
 	vvp $(SIMOUT)

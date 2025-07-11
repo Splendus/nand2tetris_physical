@@ -7,38 +7,45 @@ Info: max_span_hack is enabled: estimate is conservative.
 Report for critical path:
 -------------------------
 
-        lc40_7_1_2 (LogicCell40) [clk] -> lcout: 0.640 ns
-     0.640 ns net_12337 (counter[0])
-        t56 (LocalMux) I -> O: 0.330 ns
-        inmux_7_1_14512_14549 (InMux) I -> O: 0.260 ns
-        lc40_7_1_5 (LogicCell40) in0 -> lcout: 0.449 ns
-     1.678 ns net_12340 (COUNTER.pc_out.genblk1[4].b.bit_register.in_SB_LUT4_O_I3[1])
-        t60 (LocalMux) I -> O: 0.330 ns
-        inmux_8_1_16600_16634 (InMux) I -> O: 0.260 ns
-        lc40_8_1_1 (LogicCell40) in0 -> lcout: 0.449 ns
-     2.716 ns net_14445 (COUNTER.pc_out.genblk1[7].b.bit_register.in_SB_LUT4_O_I3[1])
-        t65 (LocalMux) I -> O: 0.330 ns
-        inmux_8_1_16612_16655 (InMux) I -> O: 0.260 ns
-        lc40_8_1_4 (LogicCell40) in3 -> lcout: 0.316 ns
-     3.621 ns net_14448 (COUNTER.pc_out.genblk1[10].b.bit_register.in_SB_LUT4_O_I3[1])
-        t69 (LocalMux) I -> O: 0.330 ns
-        inmux_9_1_18715_18749 (InMux) I -> O: 0.260 ns
-        lc40_9_1_2 (LogicCell40) in1 -> lcout: 0.400 ns
-     4.610 ns net_16555 (COUNTER.pc_out.genblk1[13].b.bit_register.in_SB_LUT4_O_I3[1])
+        lc40_4_1_1 (LogicCell40) [clk] -> lcout: 0.640 ns
+     0.640 ns net_6347 (counter[0])
+        t41 (LocalMux) I -> O: 0.330 ns
+        inmux_4_1_8169_8205 (InMux) I -> O: 0.260 ns
+        lc40_4_1_2 (LogicCell40) in0 -> lcout: 0.449 ns
+     1.678 ns net_6348 (COUNTER.pc_out.genblk1[1].b.bit_register.out_SB_LUT4_I2_O[3])
+        t43 (LocalMux) I -> O: 0.330 ns
+        inmux_4_2_8325_8363 (InMux) I -> O: 0.260 ns
+        lc40_4_2_1 (LogicCell40) in1 -> lcout: 0.400 ns
+     2.667 ns net_6423 (COUNTER.pc_out.genblk1[4].b.bit_register.out_SB_LUT4_I0_O[3])
+        t51 (LocalMux) I -> O: 0.330 ns
+        inmux_4_2_8340_8376 (InMux) I -> O: 0.260 ns
+        t7 (CascadeMux) I -> O: 0.000 ns
+        lc40_4_2_3 (LogicCell40) in2 -> lcout: 0.379 ns
+     3.635 ns net_6425 (COUNTER.pc_out.genblk1[7].b.bit_register.out_SB_LUT4_I0_O[2])
+        t53 (LocalMux) I -> O: 0.330 ns
+        inmux_5_2_10434_10472 (InMux) I -> O: 0.260 ns
+        t15 (CascadeMux) I -> O: 0.000 ns
+        lc40_5_2_1 (LogicCell40) in2 -> lcout: 0.379 ns
+     4.603 ns net_8247 (COUNTER.pc_out.genblk1[10].b.bit_register.out_SB_LUT4_I0_O[2])
+        t66 (LocalMux) I -> O: 0.330 ns
+        inmux_6_2_12541_12574 (InMux) I -> O: 0.260 ns
+        lc40_6_2_0 (LogicCell40) in1 -> lcout: 0.400 ns
+     5.592 ns net_10354 (COUNTER.pc_out.genblk1[14].b.bit_register.in_SB_LUT4_O_I3[2])
         t78 (LocalMux) I -> O: 0.330 ns
-        inmux_9_1_18729_18742 (InMux) I -> O: 0.260 ns
-     5.199 ns net_18742 (COUNTER.pc_out.genblk1[13].b.bit_register.in_SB_LUT4_O_I3[1])
-        lc40_9_1_1 (LogicCell40) in0 [setup]: 0.400 ns
-     5.599 ns net_16554 (counter[13])
+        inmux_7_2_14657_14688 (InMux) I -> O: 0.260 ns
+     6.181 ns net_14688 (COUNTER.pc_out.genblk1[14].b.bit_register.in_SB_LUT4_O_I3[2])
+        lc40_7_2_1 (LogicCell40) in0 [setup]: 0.400 ns
+     6.580 ns net_12464 (LED[0]$SB_IO_OUT)
 
 Resolvable net names on path:
      0.640 ns ..  1.229 ns counter[0]
-     1.678 ns ..  2.267 ns COUNTER.pc_out.genblk1[4].b.bit_register.in_SB_LUT4_O_I3[1]
-     2.716 ns ..  3.305 ns COUNTER.pc_out.genblk1[7].b.bit_register.in_SB_LUT4_O_I3[1]
-     3.621 ns ..  4.210 ns COUNTER.pc_out.genblk1[10].b.bit_register.in_SB_LUT4_O_I3[1]
-     4.610 ns ..  5.199 ns COUNTER.pc_out.genblk1[13].b.bit_register.in_SB_LUT4_O_I3[1]
-                  lcout -> counter[13]
+     1.678 ns ..  2.267 ns COUNTER.pc_out.genblk1[1].b.bit_register.out_SB_LUT4_I2_O[3]
+     2.667 ns ..  3.256 ns COUNTER.pc_out.genblk1[4].b.bit_register.out_SB_LUT4_I0_O[3]
+     3.635 ns ..  4.224 ns COUNTER.pc_out.genblk1[7].b.bit_register.out_SB_LUT4_I0_O[2]
+     4.603 ns ..  5.192 ns COUNTER.pc_out.genblk1[10].b.bit_register.out_SB_LUT4_I0_O[2]
+     5.592 ns ..  6.181 ns COUNTER.pc_out.genblk1[14].b.bit_register.in_SB_LUT4_O_I3[2]
+                  lcout -> LED[0]$SB_IO_OUT
 
-Total number of logic levels: 5
-Total path delay: 5.60 ns (178.62 MHz)
+Total number of logic levels: 6
+Total path delay: 6.58 ns (151.97 MHz)
 
